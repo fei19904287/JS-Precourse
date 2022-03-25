@@ -1,0 +1,49 @@
+// Conmpare two arrays are same
+
+  function assertArraysEqual(actual,expected,testName) {
+  // do they have same length
+  var sameLength = actual.length===expected.length;
+  // do they have same Values
+  var sameValues = true;
+  for(i=0;i<actual.length;i++){
+    if(actual[i]!==expected[i]){
+      sameValues = false; 
+      break;
+    }
+  }
+
+  if(sameValues&&sameLength){
+    console.log('passed');
+  }else{
+    console.log('FAILED [' + testName + '] Expected "' + 
+  expected + '", but got "' + actual + '"');
+  }
+}
+// test case
+//SUCCESS CASE
+
+var expected = ['b', 'r', 'o', 'k', 'e', 'n'];
+var actual = 'broken'.split('');
+assertArraysEqual(actual, expected, 'splits string into array of characters');
+// console output:
+// passed
+
+//FAILURE CASE
+
+var expected_1 = ['b', 'r', 'o', 'k', 'e', ];
+var actual_1 = 'broken'.split('');
+assertArraysEqual(actual_1, expected_1, 'splits string into array of characters');
+
+        
+                
+  
+
+
+
+
+
+
+  
+
+
+
